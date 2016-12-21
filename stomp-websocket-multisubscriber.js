@@ -47,7 +47,6 @@ StompWebsocket.prototype.connect = function(endpoint, topic) {
     if (this.connectHandler) {
       this.connectHandler()
     }
-    console.log('Connected: ' + frame);
     this.stompClient.subscribe(topic, this.trigger.bind(this));
   }).bind(this));
 }
@@ -59,7 +58,6 @@ StompWebsocket.prototype.disconnect = function() {
   if (this.disconnectHandler) {
     this.disconnectHandler()
   }
-  console.log("Disconnected");
 }
 
 StompWebsocket.prototype.send = function(endpoint, data) {
